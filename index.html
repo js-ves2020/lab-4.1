@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> T-shirt website </title>
+  <style>
+    h1 {
+      color: rgb(196, 83, 102);
+      font-family: verdana;
+      font-size: 300%;
+      text-shadow: 3px;
+    }
+
+    body {
+      background: linear-gradient(aquamarine, rgb(71, 71, 148));
+      border: 5px dotted;
+      margin: 3px;
+    }
+
+    table {
+      color: rgb(12, 12, 12);
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 16px;
+      background-color: rgb(196, 83, 102);
+      padding: 30px;
+      border: 5px dotted;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    table tr ::first-line {
+      color: rgb(0, 74, 50);
+      font-family: verdana;
+    }
+
+    img {
+      border: 5px solid rgb(6, 6, 6);
+      border-style: double;
+    }
+
+    ::selection {
+      color: rgb(18, 18, 19);
+      background: #761b1b90;
+    }
+
+    footer {
+      background-color: rgb(196, 83, 102);
+      font-size: large;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="error"></div>
+  <h1 style=text-align:center> T-shirt Website </h1>
+  <center>
+    <form action="" method="GET" id="form" onsubmit="return validate()">
+      <img src="https://media.gettyimages.com/photos/stack-of-colorful-tshirts-picture-id1273553043?s=170667a">
+      <table>
+        <tr>
+          <td align="center" colspan="3">
+            <b> Customer Details</b>
+          </td>
+        </tr>
+        <tr>
+          <td> Name: </td>
+          <td>
+            <input type="text" id="name1" placeholder="Name" name="">
+        </tr>
+        <tr>
+          <td>Phone Number: </td>
+          <td> <input type="number" id="number" placeholder="9999999999" maxlength="10"></td>
+        </tr>
+        <tr>
+          <td> E-mail ID: </td>
+          <td><input type="email" id="E-mail" placeholder="abc@gmail.com"></td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td> <input type="radio" name="gender">Male
+            <input type="radio" name="gender">Female
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center"> Address </td>
+        </tr>
+        <tr>
+          <td> Address: </td>
+          <td> <textarea rows="5" col="15" id="address" placeholder="address"></textarea></td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td><input id="city" type="text"></td>
+        </tr>
+        <tr>
+          <td> Pin-code: </td>
+          <td> <input type="number" id="pin" placeholder="XXXXXX" maxlength="6"></td>
+        </tr>
+      </table>
+      <br><br>
+      <table>
+        <tr>
+          <td colspan="3" align="center"> <b>Choose type</b> </td>
+        </tr>
+        <tr>
+          <td align="center"> Standard </td>
+          <td><input type="radio" </td>
+          <td align="center"> Polo neck </td>
+          <td><input type="radio" </td>
+          <td align="center"> V-neck </td>
+          <td><input type="radio" </td>
+        </tr>
+        <tr>
+          <td colspan="2"> Quantity </td>
+          <td><input id="quantity" type="text" placeholder="ex:23"></td>
+        </tr>
+        <tr>
+          <td colspan="2">Total price:</td>
+          <td><input type="integer"></td>
+        </tr>
+      </table>
+      <br><br>
+      <table>
+        <tr>
+          <td> <b> Choose size </b> </td>
+          <td>
+            <select id="size">
+              <option>XS</option>
+              <option>S</option>
+              <option>L</option>
+              <option>XL</option>
+              <option>XXL</option>
+        </tr>
+      </table>
+      <br><br>
+      <table>
+        <tr>
+          <td align="center"><b> Other details<b></td>
+        </tr>
+        <tr>
+          <td> Tagline: </td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td> Colour: </td>
+          <td><select>
+              <option>Yellow</option>
+              <option>Red</option>
+              <option>Black</option>
+              <option>White</option>
+              <option>Green</option>
+          </td>
+        </tr>
+      </table>
+      <br><br>
+      <table>
+        <tr>
+          <td align="center" colspan="3"><button type="button" onclick="validate()">Submit</button>
+            <input type="Reset" value="Reset">
+          </td>
+        </tr>
+      </table>
+      <br><br>
+      <footer> THANKYOU!</footer>
+    </form>
+</body>
+</center>
+
+<script type="text/javascript">
+  function validate() {
+
+    var name = document.getElementById("name1");
+    var number = document.getElementById('number')
+    var email = document.getElementById('E-mail')
+    var pincode = document.getElementById('pin')
+    var address = document.getElementById('address')
+    var city = document.getElementById('city')
+    var quantity = document.getElementById('quantity')
+    var size = document.getElementById('size')
+
+    if (name.value.trim() == "") {
+      alert("Name cannot be blank")
+      return false;
+    }
+    else if (number.value.trim() == "") {
+      alert("Number cannot be blank")
+      return false;
+    }
+    else if (email.value.trim() == "") {
+      alert("E-mail cannot be blank")
+      return false;
+    }
+    else if (pincode.value.trim() == "") {
+      alert("Pin code cannot be blank")
+      return false;
+    }
+    else if (address.value.trim() == "") {
+      alert("Pin code cannot be blank")
+      return false;
+    }
+    else if (city.value.trim() == "") {
+      alert("Pin code cannot be blank")
+      return false;
+    }
+    else if (quantity.value.trim() == "") {
+      alert("Pin code cannot be blank")
+      return false;
+    }
+    else if (size.value.trim() == "") {
+      alert("Pin code cannot be blank")
+      return false;
+    }
+    else window.print();
+  } 
+</script>
+
+</html>
